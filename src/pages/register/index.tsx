@@ -107,10 +107,9 @@ function Login() {
                     }
                   }}
                   options={[
-                    { value: 'it mutaxassisi', label: "IT mutaxassisi" },
-                    { value: "junior", label: "Junior" },
-                    { value: "middle", label: "Middle" },
-                    { value: "senior", label: "Senior" },
+                    { value: "IT_junior", label: "IT mutaxassisi (Junior)" },
+                    { value: "IT_middle", label: "IT mutaxassisi (Middle)" },
+                    { value: "IT_senior", label: "IT mutaxassisi (Senior)" },
                     { value: "o'qituvchi", label: "O'qituvchi" },
                     { value: "talaba", label: "Talaba" },
                     { value: "tibbiyot", label: "Tibbiyot" },
