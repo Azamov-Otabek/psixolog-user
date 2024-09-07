@@ -98,7 +98,7 @@ function Index() {
     ) : (
       <>
         <ToastContainer />
-        <div className="question" style={{paddingBottom: 150}}>
+        <div className="question" style={{paddingBottom: 155}}>
           <h2 style={{ textAlign: 'center', marginBottom: 40 }}>{poll?.title}</h2>
           {data.length > 0 ? (
             <Form form={form} onFinish={handleSubmit}>
