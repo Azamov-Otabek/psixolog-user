@@ -99,7 +99,8 @@ function Index() {
       <>
         <ToastContainer />
         <div className="question" style={{paddingBottom: 155}}>
-          <h2 style={{ textAlign: 'center', marginBottom: 40 }}>{poll?.title}</h2>
+          <h2 style={{ textAlign: 'center', marginBottom: 20 }}>{poll?.title}</h2>
+          <p style={{ textAlign: 'center', marginBottom: 40, fontWeight: 600, fontSize: 16 }}>{poll?.subtitle}</p>
           {data.length > 0 ? (
             <Form form={form} onFinish={handleSubmit}>
               {data.map((e, i) => (
@@ -138,7 +139,7 @@ function Index() {
               )}
             </Form>
           ) : (
-            <p style={{textAlign: 'center', fontSize: 20, fontWeight: 600}}>Savollar mavjud emas !</p>
+            <p style={{textAlign: 'center', fontSize: 20, fontWeight: 600}}>Savollar tanlang !</p>
           )}
         </div>
 
