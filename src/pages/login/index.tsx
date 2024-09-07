@@ -18,10 +18,13 @@ function Login() {
       const response = await http.post('/login', values)
       if(response?.status == 200){
         setCookies('access_token', response?.data?.access_token)
-        toast.success('Tizimga kirishga ruhsat berildi !', {autoClose: 1300})
-        setTimeout(() => {
-          navigate('/dashboard')
-        }, 2000);
+        if(response?.data?.role == 'user'){
+          toast.success('Tizimga kirishga ruhsat berildi !', {autoClose: 1300})
+              setTimeout(() => {
+              navigate('/dashboard')
+          }, 2000);
+        }
+        
       }
     }catch(err:any){
       toast.error(err?.response?.data?.error == 'email' ? 'Email xato kiritildi' : 'Password xato kiritild')
