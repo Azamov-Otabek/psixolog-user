@@ -23,6 +23,8 @@ function Login() {
               setTimeout(() => {
               navigate('/dashboard')
           }, 2000);
+        }else{
+          toast.error('Email xato kiritdingiz !', {autoClose: 1200})
         }
         
       }
