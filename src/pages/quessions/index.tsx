@@ -128,6 +128,7 @@ function Index() {
               ))}
               {menu_id && (
                 <Button
+                className="form-btn"
                   style={{ display: 'block', width: '100%', maxWidth: 100, margin: '0 auto' }}
                   type="primary"
                   htmlType="submit"

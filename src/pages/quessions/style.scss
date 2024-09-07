@@ -25,3 +25,43 @@
         margin-bottom: 5px;
     }
 }
+
+
+.form-btn{
+    background: #0C3B2E !important;
+}
+
+
+.radio {
+  .ant-radio-wrapper {
+    // Adjust the font size and other properties as needed
+    font-size: 19px;
+    font-family: sans-serif;
+
+    // Style for the radio button label
+    color: #333; // Change this to your desired color
+
+    // Ensure the color change is applied even if overridden by other styles
+    .ant-radio-checked .ant-radio-inner {
+      background-color: #1890ff; // Color of the selected radio button
+      border-color: #1890ff; // Border color of the selected radio button
+    }
+
+    .ant-radio-inner {
+      border-color: #0C3B2E !important; // Border color of the unselected radio button
+      background-color: #fff; // Background color of the unselected radio button
+    }
+
+    .ant-radio-checked {
+      .ant-radio-inner {
+        background-color: #1890ff; // Color of the selected radio button
+        border-color: #1890ff !important; // Border color of the selected radio button
+      }
+    }
+
+    .ant-radio-disabled .ant-radio-inner {
+      background-color: #d9d9d9; // Background color of the disabled radio button
+      border-color: #d9d9d9; // Border color of the disabled radio button
+    }
+  }
+}

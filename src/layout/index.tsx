@@ -102,7 +102,7 @@ const App: React.FC = () => {
       <Layout>
         <Sider
           style={siderStyle}
-          breakpoint="xl"
+          breakpoint="xxl"
           width={250}
           collapsedWidth="0"
           onBreakpoint={(broken) => {
