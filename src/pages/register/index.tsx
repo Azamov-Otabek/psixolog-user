@@ -8,7 +8,9 @@ import http from "../../config";
 function Login() {
   const [load, setLoadi] = useState(false);
   const [selectedLevelType, setSelectedLevelType] = useState<string | undefined>(undefined);
+  const [selectedNation, setSelectedNation] = useState<string | undefined>(undefined);
   const [otherProfession, setOtherProfession] = useState<string | undefined>(undefined);
+  const [otherNotion, setOtherNotion] = useState<string | undefined>(undefined);
   const navigate = useNavigate();
 
   async function handleSubmit(values: any) {
@@ -17,6 +19,10 @@ function Login() {
 
     if (selectedLevelType === 'boshqa' && otherProfession) {
       values.level_type = otherProfession;
+    }
+
+    if(selectedNation === 'boshqa' && otherNotion){
+      values.nation = otherNotion
     }
 
     localStorage.setItem('email', values?.email);
@@ -63,6 +69,89 @@ function Login() {
               >
                 <Input size="large" placeholder="Abdullayev" name="surname" />
               </FormItem>
+
+                <p>Yoshingiz</p>
+              <FormItem
+                name="age"
+                hasFeedback
+                rules={[
+                  { required: true, message: "Yoshingizni kiriting!" },
+                ]}
+                >
+                <Select
+                  virtual={false}
+                  showSearch
+                  placeholder="Select a age"
+                  optionFilterProp="label"
+                  options={[
+                    { value: "15-20", label: "15-20" },
+                    { value: "21-25", label: "21-25" },
+                    { value: "26-30", label: "26-30" },
+                    { value: "31-35", label: "31-35" },
+                    { value: "36-40", label: "36-40" },
+                    { value: "41-45", label: "41-45" },
+                    { value: "46 va undan ortiq", label: "46 va undan ortiq" },
+                  ]}
+                />
+              </FormItem>
+
+
+              <p>Millatingiz</p>
+              <FormItem
+                name="nation"
+                hasFeedback
+                rules={[
+                  { required: true, message: "Millatingizni kiriting !" },
+                ]}
+              >
+                <Select
+                 virtual={false}
+                  showSearch
+                  placeholder="Select a nation"
+                  optionFilterProp="label"
+                  value={selectedNation}
+                  onChange={(value) => {
+                    setSelectedNation(value);
+                    if (value !== 'boshqa') {
+                      setOtherProfession(undefined);
+                    }
+                  }}
+                  options={[
+                    { value: "Ozbek", label: "O'zbek" },
+                    { value: "Tojik", label: "Tojik" },
+                    { value: "Rus", label: "Rus" },
+                    { value: "Ukarin", label: "Ukrain" },
+                    { value: "Hind", label: "Hind" },
+                    { value: "Turk", label: "Turk" },
+                    { value: "Qozoq", label: "Qozoq" },
+                    { value: "Qirgiz", label: "Qirg'iz" },
+                    { value: "Koreys", label: "Koreys" },
+                    { value: "Nemis", label: "Nemis" },
+                  
+                    { value: "boshqa", label: "Boshqa" }
+                  ]}
+                />
+              </FormItem>
+              {selectedNation === 'boshqa' && (
+                <>
+                  <p>Boshqa millat</p>
+                  <FormItem
+                    name="otherNotion"
+                    hasFeedback
+                    rules={[
+                      { required: true, message: "Iltimos, boshqa millatni kiriting !" },
+                    ]}
+                  >
+                    <Input
+                      size="large"
+                      placeholder="Boshqa millatni kiriting"
+                      name="other_notion"
+                      value={otherNotion}
+                      onChange={(e) => setOtherNotion(e.target.value)}
+                    />
+                  </FormItem>
+                </>
+              )}
 
               <p>Email</p>
               <FormItem
