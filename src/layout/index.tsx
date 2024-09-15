@@ -34,7 +34,7 @@ const App: React.FC = () => {
     marginTop: 100,
     background: "#FFF",
     zIndex: 99,
-    paddingBottom: 150,
+    paddingBottom: 250,
   };
 
   async function getMenuData() {
@@ -100,33 +100,36 @@ const App: React.FC = () => {
         </div>
       </Header>
       <Layout>
-        <Sider
-          style={siderStyle}
-          breakpoint="xxl"
-          width={250}
-          collapsedWidth="0"
-          onBreakpoint={(broken) => {
-            console.log(broken);
-          }}
-          onCollapse={(collapsed, type) => {
-            console.log(collapsed, type);
-          }}
-        >
-          <Menu
-            style={{
-              height: "100%",
-              fontSize: 18,
-              fontWeight: "semibold",
-              background: "white",
-              color: "white",
-            }}
-            items={data.map((e: any, i: number) => ({
-              key: i,
-              onClick: () => changeMenu_id(e.id),
-              label: e.title,
-            }))}
-          />
-        </Sider>
+      <Sider
+  style={siderStyle}
+  className="sider"
+  breakpoint="xxl"
+  width={250}
+  collapsedWidth="0"
+  onBreakpoint={(broken) => {
+    console.log(broken);
+  }}
+  onCollapse={(collapsed, type) => {
+    console.log(collapsed, type);
+  }}
+>
+  <Menu
+    style={{
+      height: '100%',
+      fontSize: 18,
+      fontWeight: 'semibold',
+      background: 'white',
+      color: 'white',
+      overflowY: 'auto',  // Added to make the menu scrollable
+    }}
+    items={data.map((e: any, i: number) => ({
+      key: i,
+      onClick: () => changeMenu_id(e.id),
+      label: e.title,
+    }))}
+  />
+</Sider>
+
         <Content
           style={{
             width: "100%",
