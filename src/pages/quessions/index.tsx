@@ -36,6 +36,7 @@ function Index() {
     try {
       if (menu_id) {
         const response = await http.get(`/questions/${menu_id}`);
+        console.log(response);
         setPoll(response?.data?.poll || {}); 
         setData(response?.data?.question || []);
         setVariant(response?.data?.poll?.options || []); 
@@ -73,7 +74,7 @@ function Index() {
     try {
       const response = await http.post('/send-answers', payload);
       if (response.status === 201) {
-        setFeedback(response?.data?.feedback)
+        setFeedback(response?.data?.feedback[0]?.text)
         showModal()
         form.resetFields(); 
       }
