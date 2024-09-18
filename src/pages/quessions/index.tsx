@@ -140,10 +140,11 @@ function Index() {
               )}
             </Form>
           ) : (
-            <div>
-                <h2 style={{textAlign: 'center', maxWidth: 800, fontSize: 16, margin:'0 auto', marginBottom: 20}}>Ilmiy tadqiqotdan natija olishimiz uchun har bir respondent barcha testlarni bajarishi zarur. Iltimos, testlarni bajarishda samimiylik bilan yondashing! Har bir javobingiz biz uchun katta ahamiyatga ega.</h2>
-                <h2 style={{textAlign: 'center', maxWidth: 800, fontSize: 16, margin:'0 auto', marginBottom: 20}}>Testlar faqatgina ilmiy tadqitot uchun olib borilmoqda, ma’lumotlar sir saqlanadi.</h2>
-                <h2 style={{textAlign: 'center', maxWidth: 800, fontSize: 16, margin:'0 auto', marginBottom: 20}}>Testlarning tanlang</h2>
+            <div className="text">
+                <h2>Tadqiqotning maqsadi insonlarda o‘z qobiliyatlariga shubhalanishning psixologik ildizlarini topish maqsadida olib borilmoqda. Sizning ishtirokingiz aynan shu muammoga yechim topishga yordam beradi!</h2>
+                <h2>Ilmiy tadqiqotdan natija olishimiz uchun har bir respondent barcha testlarni bajarishi zarur. Iltimos, testlarni bajarishda samimiylik bilan yondashing! Har bir javobingiz biz uchun katta ahamiyatga ega.</h2>
+                <h2>Testlar faqatgina ilmiy tadqitot uchun olib borilmoqda, sizning shaxsiyatingiz hamda ma’lumotlaringiz sir saqlanadi.</h2>
+                <h2>Testlarni tanlang</h2>
             </div>
           )}
         </div>
