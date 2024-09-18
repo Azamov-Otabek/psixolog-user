@@ -140,7 +140,11 @@ function Index() {
               )}
             </Form>
           ) : (
-            <p style={{textAlign: 'center', fontSize: 20, fontWeight: 600}}>Savollar tanlang !</p>
+            <div>
+                <h2 style={{textAlign: 'center', maxWidth: 800, fontSize: 16, margin:'0 auto', marginBottom: 20}}>Ilmiy tadqiqotdan natija olishimiz uchun har bir respondent barcha testlarni bajarishi zarur. Iltimos, testlarni bajarishda samimiylik bilan yondashing! Har bir javobingiz biz uchun katta ahamiyatga ega.</h2>
+                <h2 style={{textAlign: 'center', maxWidth: 800, fontSize: 16, margin:'0 auto', marginBottom: 20}}>Testlar faqatgina ilmiy tadqitot uchun olib borilmoqda, ma’lumotlar sir saqlanadi.</h2>
+                <h2 style={{textAlign: 'center', maxWidth: 800, fontSize: 16, margin:'0 auto', marginBottom: 20}}>Testlarning tanlang</h2>
+            </div>
           )}
         </div>
 
