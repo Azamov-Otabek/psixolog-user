@@ -1,4 +1,4 @@
-import { ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import { Button, Form, Input, Radio, Select } from "antd";
 import FormItem from "antd/es/form/FormItem";
 import { useState } from "react";
@@ -29,7 +29,10 @@ function Login() {
     try {
       const response = await http.post('/register', values);
       if (response?.status === 200) {
-        navigate('/verify-password');
+        toast.success("Muvaffaqiyatli ro'yhatdan o'tildi", {autoClose: 1200})
+        setTimeout(() => {
+          navigate('/');
+        }, 1700);
       }
     } catch (err) {
       setLoadi(false);
